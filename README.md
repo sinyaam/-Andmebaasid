@@ -1,5 +1,10 @@
 ## Andmebaasid
  Andmebaasidega seotud SQL kood ja konspetkid
+## Sisukord
+- [Põhimõisted](#pohimoisted)
+
+
+ 
 ## Põhimõisted
 - andmebaas - struktureeritud andmete kogum
 - tabel = olem -сущность -entity
