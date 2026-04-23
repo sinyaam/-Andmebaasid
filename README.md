@@ -5,6 +5,8 @@
 - [Andmetüübid](#andmetüübid)
 - [SQL-structure Query Language](#SQL-structure-Query-Language)
 - [Tabelivahelised seosed](#Tabelivahelised-seosed)
+- [PIIRANGUD](#PIIRANGUD)
+- [ALTER TABLE](#ALTER-TABLE)
 ## Põhimõisted
 - andmebaas - struktureeritud andmete kogum
 - tabel = olem -сущность -entity
