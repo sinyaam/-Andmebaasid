@@ -3,7 +3,7 @@
 ## Sisukord
 - [Põhimõisted](#pohimoisted)
 - [Andmetüübid](#andmetüübid)
-- [SQL-structure Query Language](#sQL-structure-Query-Language)
+- [SQL](#sql)
  
 ## Põhimõisted
 - andmebaas - struktureeritud andmete kogum
@@ -24,7 +24,7 @@
 3. Loogilised: boolean, true/false, bit, bool
 4. Kuupäeva: date, time, datetime
 ```
-## SQL-structure Query Language - struktureeritud päringu keel
+## SQL - structure Query Language - struktureeritud päringu keel
 - Tabeli loomine
 ```sql
  CREATE TABLE opilane(
