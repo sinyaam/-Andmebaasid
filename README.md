@@ -4,7 +4,7 @@
 - [Põhimõisted](#pohimoisted)
 - [Andmetüübid](#andmetüübid)
 - [SQL-structure Query Language](#SQL-structure-Query-Language)
-- [Seosed](#Seosed)
+- [Tabelivahelised seosed](#Tabelivahelised-seosedd)
 ## Põhimõisted
 - andmebaas - struktureeritud andmete kogum
 - tabel = olem -сущность -entity
@@ -53,7 +53,7 @@ VALUES ('Merkulova','Irina', 4.2),
 ('Suvorov','Marko', 5.0)
 SELECT * FROM opilane;
 ```
-## Seosed (tabelivahelised seosed)
+## Tabelivahelised seosed
 - üks-ühele (nt mees-naine)
 - üks-mitmele (nt ema-lapsed)
 - <img width="228" height="500" alt="{DD22C28F-37B1-40BF-B068-F68D202FE842}" src="https://github.com/user-attachments/assets/cdc8fa3a-2ca5-4a6f-83e2-171ade37dc0e" />
