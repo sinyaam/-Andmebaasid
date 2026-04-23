@@ -3,7 +3,7 @@
 ## Sisukord
 - [Põhimõisted](#pohimoisted)
 - [Andmetüübid](#andmetüübid)
-- [SQL-structure Query Language](#SQL-structure-Query-Language)
+- [SQL-structure Query Language](#sQL-structure-Query-Language)
  
 ## Põhimõisted
 - andmebaas - struktureeritud andmete kogum
