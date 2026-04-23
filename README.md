@@ -91,3 +91,25 @@ ALTER TABLE opilane ALTER COLUMN isikukood char(11);
 
 sp_help opilane;
 ```
+```sql
+--PK lisamine
+ALTER TABLE ryhm ADD CONSTRAINT pk_ryhm PRIMARY KEY (ryhmId);
+--UNIQUE lisamine
+ALTER TABLE ryhm ADD CONSTRAINT un_ryhm UNIQUE (ryhmNimi);
+
+--kontrollimiseks täidame tabelit ryhm
+SELECT * FROM ryhm;
+INSERT INTO ryhm
+VALUES(2, 'TITpe24');
+
+--lisamine FOREIGN KEY - võõrvõti-välisvõti
+ALTER TABLE opilane ADD ryhmId int;
+SELECT * FROM opilane;
+SELECT * FROM ryhm;
+ALTER TABLE opilane ADD CONSTRAINT fk_ryhm
+FOREIGN KEY (ryhmId) REFERENCES ryhm(ryhmId);
+
+INSERT INTO opilane
+VALUES ('Leeno','Jegorova', '2000-12-10',1,'+325689','Tartu', 4.5,
+'5667777',2);
+```
