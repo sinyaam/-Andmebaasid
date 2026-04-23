@@ -4,7 +4,7 @@
 - [Põhimõisted](#pohimoisted)
 - [Andmetüübid](#andmetüübid)
 - [SQL-structure Query Language](#SQL-structure-Query-Language)
-- [Tabelivahelised seosed](#Tabelivahelised-seosedd)
+- [Tabelivahelised seosed](#Tabelivahelised-seosed)
 ## Põhimõisted
 - andmebaas - struktureeritud andmete kogum
 - tabel = olem -сущность -entity
