@@ -304,7 +304,7 @@ ALTER TABLE `occupied_room`
 -- Piirangud tabelile `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`);
+ ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`);
 
 --
 -- Piirangud tabelile `reserved_room`
