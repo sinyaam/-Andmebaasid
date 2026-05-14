@@ -12,8 +12,10 @@ CREATE TABLE loomad(
 ## Protseduur mis lisab uue looma andmeid tabelisse ja kohe kuvab neid
 
 Lisa loomad protseduur
+
 <img width="750" height="513" alt="{A411D534-C837-462E-A9E4-E2728AD9F0E8}" src="https://github.com/user-attachments/assets/cccad415-50f6-492d-ad2d-75dcf40240fd" />
 Kustuta loomad protseduur
+
 <img width="659" height="398" alt="{3529EE2F-C574-4295-8584-BA68527BAEC8}" src="https://github.com/user-attachments/assets/174fc6ac-2443-436e-8235-be17d24fe72e" />
 
 
