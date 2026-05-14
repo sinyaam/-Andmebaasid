@@ -25,6 +25,4 @@ Protseduurid
 
 <img width="737" height="439" alt="{294CBCD9-86C1-44D4-B665-05E3A8CCF651}" src="https://github.com/user-attachments/assets/9aba34dd-d2e0-4390-807e-add8f490f346" />
 
-<img width="706" height="436" alt="{21CE1866-E2A7-475E-960E-76C465999969}" src="https://github.com/user-attachments/assets/3797d07c-285e-44fc-aa1a-2f8db6ac5811" />
-
-
+<img width="746" height="577" alt="{FC9B8D94-2CD2-4460-8FC5-8A5F696A9EF6}" src="https://github.com/user-attachments/assets/e69e3d22-e722-463d-af0b-304a0508b7a3" />
