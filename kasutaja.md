@@ -42,7 +42,8 @@ Tee paremklikk ja vali:
 New Login...
 
 >>>>>pilt
-<img width="707" height="656" alt="{C4FDDE4E-9535-4B93-83EF-8C5B82446BD2}" src="https://github.com/user-attachments/assets/4a054a1a-8d68-4a67-aa60-d58fd5073e3b" />
+<img width="708" height="658" alt="{26BCFB42-9F2A-41F1-A3BE-27D627F3209F}" src="https://github.com/user-attachments/assets/abdf07ac-9047-4bd5-82f2-8f6c4e423771" />
+
 
 
 Harjutamiseks võib eemaldada linnukese:  User must change password at next login
