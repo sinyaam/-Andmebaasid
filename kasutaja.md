@@ -69,6 +69,8 @@ Tee paremklikk:  New User...
 Seosta kasutaja loginiga
 
 >>>>>pilt
+<img width="203" height="132" alt="{ADB847E3-E191-4826-B1DF-74A37563F38C}" src="https://github.com/user-attachments/assets/5e1d7cba-9fef-4eed-a1a1-afaf637234d2" />
+
 
 Membership ja õigused
 
