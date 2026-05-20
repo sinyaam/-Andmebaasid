@@ -135,3 +135,4 @@ GRANT INSERT ON loomad TO DirectorNimi;
 
 DENY DELETE ON loomad to DirectorNimi;
 ```
+<img width="705" height="651" alt="{D78DE944-B7B6-4E28-82CE-EC880B81CED8}" src="https://github.com/user-attachments/assets/110a64d4-bb73-44fb-bf78-6dda6d9b4e19" />
