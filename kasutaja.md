@@ -124,4 +124,12 @@ Vihje! UPDATE õigused parem lubada SQL käsuga
 GRANT UPDATE (movieCost, movieDir)
 ON movies
 TO Produtsent;
-    
+    ```sql
+--õiguste määramine
+--GRANT - kasutaja õiguste lubamine - разрешение прав пользователя
+--DENY  - kasutaja õiguste keelamine - запрещение прав пользователя
+GRANT SELECT ON loomad TO DirectorNimi;
+GRANT INSERT ON loomad TO DirectorNimi;
+
+DENY DELETE ON loomad to DirectorNimi;
+```
