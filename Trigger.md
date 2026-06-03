@@ -61,3 +61,4 @@ VALUES ('Pärnu', 50000);
 select * from linnad;
 select * from logi;
 ```
+<img width="693" height="642" alt="{F6A3BE9B-CBCD-40C6-898B-319D0597ABF0}" src="https://github.com/user-attachments/assets/48e14334-0586-411c-a7a6-7e0ce16c6063" />
