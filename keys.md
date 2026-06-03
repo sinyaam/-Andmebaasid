@@ -1,6 +1,6 @@
-## Andmebaaside konspektid
+## Andmebaasid konspektid | Ivan
 
-[Põhimõisted](readme.md) | [Kasutajad](Kasutaja.md) | [Trigerid](triger.md) | [Protseduurid](protseduurid.md)| [Keys](Keys.md)
+[Põhimõsted](README.md) | [Protseduurid;SQLSERVER](protseduur.md) | [Protseduurid;XAMPP](protseduurXAMPP.md) | [Triggerid](Trigger.md) | [hotelliruum](hotelliruum.md) | [kasutaja](kasutaja.md) | [keys](keys.md)
 
 # Andmebaasi võtmed
 
