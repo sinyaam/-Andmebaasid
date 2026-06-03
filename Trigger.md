@@ -1,3 +1,7 @@
+## Andmebaasid konspektid | Ivan
+
+[Põhimõsted](README.md) | [Protseduurid;SQLSERVER](protseduur.md) | [Protseduurid;XAMPP](protseduurXAMPP.md) | [Triggerid](Trigger.md) | [hotelliruum](hotelliruum.md) | [kasutaja](kasutaja.md) | [keys](keys.md)
+
 ## TRIGGER - triger - pööstik 
 - andmedaasi objekt, mis  automatselt  käivitud tabel sündmused ( INSERT , UPDATE, DELETE).
 
