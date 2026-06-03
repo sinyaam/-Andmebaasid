@@ -61,7 +61,7 @@ INSERT INTO room
 VALUES ('1','room1','reserved',1,1),
 ('2','room2','ready',0,2),
 ('3','room3','reserved',0,3);
-
+```
 <img width="361" height="99" alt="{95731333-5A7B-413B-A2C6-DF8788EF20F9}" src="https://github.com/user-attachments/assets/191de266-e4bc-4c62-a527-b589ca07d1e3" />
 ```
 --5.reserved_room
