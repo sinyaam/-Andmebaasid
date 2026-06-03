@@ -1,4 +1,7 @@
-## Andmebaasid
+## Andmebaasid konspektid | Ivan
+
+[Põhimõsted](README.md) | [Protseduurid](protseduur.md)
+
  Andmebaasidega seotud SQL kood ja konspetkid
 ## Sisukord
 - [Põhimõisted](#pohimoisted)
