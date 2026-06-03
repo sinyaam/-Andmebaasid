@@ -1,26 +1,35 @@
-## Trigger - triger - päästik
-- andmebaasi objekt mis automatselt käivitud tabeli sündmused (INSER, UPDATE, DELETE)
-### lisamise trigger 
+## TRIGGER - triger - pööstik 
+- andmedaasi objekt, mis  automatselt  käivitud tabel sündmused ( INSERT , UPDATE, DELETE).
+
+
 ```sql
-Create database trigerTITpv24;
-use trigerTITpv24;
---
+create database trigerISTITpv24;
+
+use trigerISTITpv24;
+
+	
+
 Create table linnad(
 linnID int PRIMARY KEY IDENTITY (1,1),
 linnanimi varchar(15) NOT NULL,
 rahvaarv int);
- --tabel mis täidab triger
+
+ --tabel , mis täidab triger
+
+
 Create table logi(
 id int PRIMARY KEY IDENTITY (1,1),
 kasutaja varchar(25),
 aeg DATETIME,
 toiming  varchar(100),
-andmed TEXT --triger automaatselst lisab mida sekretaar lisas/kustutas tabelisse linnad
-)
+andmed TEXT  -- triger automatselt lisab mida sekretaar lisas/kustutas tabelisse linnad
+);
 
 select * from linnad;
 select * from logi;
 
+
+--Trigger lisatud kirjeid jälgimiseks tabelis “linnad” – INSERT
 --Jälgib andmete sisestamine tabelis linnad ja teeb vastava kirje tabelis logi
 
 CREATE TRIGGER linnaLisamine
@@ -29,89 +38,67 @@ FOR INSERT
 AS
 INSERT INTO logi(kasutaja, aeg, toiming, andmed)
 SELECT
-SYSTEM_USER,
+SYSTEM_USER, -- kasutaja
 GETDATE(),  --aeg
 'on tehtud INSERT käsk',  --toiming
 inserted.linnanimi  --andmed
 FROM inserted;
 
 
---kontrollimiseks insert into linnad 
-INSERT INTO linnad(linnanimi, rahvaarv)
-VALUES ('Tallinn', 600000);
+--kontrollimiseks Insert into linnad
+Insert into linnad(linnanimi, rahvaarv)
+values ('Tartu',250000);
 
-INSERT INTO linnad(linnanimi, rahvaarv)
-VALUES ('Tartu', 250000);
 
-INSERT INTO linnad(linnanimi, rahvaarv)
-VALUES ('Viimsi', 2500);
-
-SELECT * FROM linnad;
-SELECT * FROM logi;
-
---riggerimuutmine
-ALTER TRIGGER linnaLisamine
+-- triger muutmine 
+Alter TRIGGER linnaLisamine
 ON linnad --tabelinimi, mis on vaja jälgida
 FOR INSERT
 AS
 INSERT INTO logi(kasutaja, aeg, toiming, andmed)
 SELECT
-SYSTEM_USER,
+SYSTEM_USER, -- kasutaja
 GETDATE(),  --aeg
-'on tehtud INSERT käsk',  --toiming
-CONCAT('linn: ', inserted.linnanimi , ', rahvaarv: ', inserted.rahvaarv) --andmed
+'on tehtud INSERT käsk',  --toiming 
+CONCAT('linn: ',  inserted.linnanimi , ' rahvaarv: ', inserted.rahvaarv )--andmed
 FROM inserted;
+
+Insert into linnad(linnanimi, rahvaarv)
+values ('Pärnu',50000);
+
+select * from linnad;
+select * from logi;
 ```
+- <img width="601" height="494" alt="{00279FE3-A6A3-4C74-834F-B0FF4E607758}" src="https://github.com/user-attachments/assets/b08eeb83-6363-4beb-9ece-f78feb2c428f" />
 
-<img width="621" height="331" alt="{6B66A5CB-7062-4D51-B408-A17811569EC9}" src="https://github.com/user-attachments/assets/f42302ba-c324-4251-b593-406069bbf2f9" />
+- <img width="595" height="227" alt="{6AF43BD6-4B89-46CD-BDB9-6F4871D84CB3}" src="https://github.com/user-attachments/assets/9dd6c44b-37f0-4764-9b26-8d2ea8c2c5b3" />
 
-### kustutamise triger
 
-```sql
-CREATE TRIGGER kustutamine
-ON linnad --tabelinimi, mis on vaja jälgida
-FOR DelEte
-AS
-INSERT INTO logi(kasutaja, aeg, toiming, andmed)
-SELECT
-SYSTEM_USER,
-GETDATE(),  --aeg
-'on tehtud DELETE käsk',  --toiming
-CONCAT('linn: ', deleted.linnanimi , ', rahvaarv: ', deleted.rahvaarv) --andmed
-FROM deleted;
 
---kontroll kustutamine
-DELETE from linnad where linnID=1;
+## XAMPP TRIGGER
 
-SELECT * FROM linnad;
-SELECT * FROM logi;
-```
+## LISAMINE
 
-<img width="683" height="210" alt="{02395B8F-8110-442F-8766-43112642B3E2}" src="https://github.com/user-attachments/assets/6f656c2b-9ff2-44b7-bc72-4a73f52edac1" />
+- <img width="591" height="435" alt="{3ACF05BF-4006-4073-BF3B-26774A80E22C}" src="https://github.com/user-attachments/assets/482d175f-872a-4d6a-9eea-77fb25481c00" />
 
- ### triger update 
 
- ```sql
-CREATE TRIGGER linnaUUendamine
-ON linnad --tabelinimi, mis on vaja jälgida
-FOR UPDATE
-AS
-INSERT INTO logi(kasutaja, aeg, toiming, andmed)
-SELECT
-SYSTEM_USER,
-GETDATE(),  --aeg
-'on tehtud UPDATE käsk',  --toiming
-CONCAT('VANAD: linn: ', deleted.linnanimi , ', rahvaarv: ', deleted.rahvaarv,
-'||| UUED: linn: ', inserted.linnanimi , ', rahvaarv: ', inserted.rahvaarv) --andmed
-FROM deleted INNER JOIN inserted
-on deleted.linnID=inserted.linnID;
+- <img width="769" height="267" alt="{6B1366EA-D74E-443F-8F6B-474D1CF5BDBA}" src="https://github.com/user-attachments/assets/bff1cddd-476a-41ab-b36b-3fa457ffc397" />
 
---kontroll uuendamine
 
-update linnad set linnanimi='Narva-väike', rahvaarv=50 where linnID=2
 
-SELECT * FROM linnad;
-SELECT * FROM logi;
- ```
+## KUSTUTAMINE
 
-<img width="941" height="246" alt="{51FDB3A2-E975-4F8C-9420-D4BFF56E009B}" src="https://github.com/user-attachments/assets/f6f1d990-ef1d-46c1-bb3e-c7ad86e5bff8" />
+- <img width="613" height="667" alt="{F31C000A-695B-40D0-8C08-C3AB4CD3A71B}" src="https://github.com/user-attachments/assets/27decaee-6b5a-48eb-bbe4-9de626f16a7c" />
+
+- <img width="812" height="309" alt="{4BC136AA-C2B9-436D-B199-55EDF791F7CF}" src="https://github.com/user-attachments/assets/d4c734f8-fd84-4f5c-8437-bd8b04f84d83" />
+
+## UPDATE
+
+- <img width="640" height="672" alt="{72375FC0-C87F-480C-89E0-71E8FAD4A784}" src="https://github.com/user-attachments/assets/6263b37d-b3d6-4825-b465-d3bd413a076b" />
+
+
+- <img width="825" height="242" alt="{F68E8EA9-18C1-4F0E-9654-CCB7A68FAE1B}" src="https://github.com/user-attachments/assets/0ff55c05-5303-46ef-9d8d-367109136396" />
+
+## KONTROLIMINE sekretarIvan
+
+- <img width="969" height="329" alt="{A47A925A-9D2E-41C7-A260-7A3729692525}" src="https://github.com/user-attachments/assets/ef11b42f-ca85-4e3c-8572-375a02c06646" />
