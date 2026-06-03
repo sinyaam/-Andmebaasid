@@ -1,285 +1,177 @@
-# Andmebaasi võtmed (Keys)
+## Andmebaaside konspektid
 
-## Sissejuhatus
+[Põhimõisted](readme.md) | [Kasutajad](Kasutaja.md) | [Trigerid](triger.md) | [Protseduurid](protseduurid.md)| [Keys](Keys.md)
 
-Andmebaasi võtmed (keys) on spetsiaalsed väljad või väljade kombinatsioonid, mida kasutatakse andmete unikaalseks tuvastamiseks ning tabelite vaheliste seoste loomiseks. Võtmed aitavad tagada andmete terviklikkust ja vältida vigade tekkimist andmebaasis.
+# Andmebaasi võtmed
 
----
+## Primary Key ehk primaarvõti
 
-# 1. Primary Key
+**Primary Key** on väli või väljade kombinatsioon, mis tuvastab iga tabeli rea üheselt.
 
-## Definitsioon
+Seda kasutatakse andmete unikaalseks tuvastamiseks.
 
-Primary Key (primaarvõti) on väli või väljade kombinatsioon, mis identifitseerib iga tabeli kirje unikaalselt.
+Primaarvõtme omadused:
 
-## Milleks kasutatakse
+* väärtus peab olema unikaalne;
+* väärtus ei tohi olla `NULL`;
+* ühes tabelis saab olla ainult üks Primary Key.
 
-* Kirjete üheseks tuvastamiseks.
-* Duplikaatide vältimiseks.
-* Seoste loomiseks teiste tabelitega.
-
-## Erinevus teistest võtmetest
-
-Primary Key peab olema unikaalne ja ei tohi sisaldada NULL väärtusi.
-
-## Näide
+Näide:
 
 ```sql
-CREATE TABLE Opilased (
-    OpilaneID INT PRIMARY KEY,
-    Eesnimi VARCHAR(50),
-    Perenimi VARCHAR(50)
+CREATE TABLE Opilane (
+    opilane_id INT PRIMARY KEY,
+    eesnimi VARCHAR(50),
+    perenimi VARCHAR(50)
 );
 ```
 
-**Lisa siia ekraanipilt tabeli loomise tulemusest.**
+---
+
+## Foreign Key ehk võõrvõti
+
+**Foreign Key** on väli, mis viitab teise tabeli Primary Key-le.
+
+Seda kasutatakse tabelite omavaheliseks sidumiseks ja andmete tervikluse tagamiseks.
+
+Võõrvõti ei tuvasta kirjet iseseisvalt, vaid seob ühe tabeli teise tabeliga.
+
+**SIIA LISA FOREIGN KEY PILT**
 
 ---
 
-# 2. Foreign Key
+## Unique Key
 
-## Definitsioon
+**Unique Key** tagab, et veerus olevad väärtused oleksid unikaalsed.
 
-Foreign Key (võõrvõti) on väli, mis viitab teise tabeli Primary Key väärtusele.
+Seda kasutatakse korduvate väärtuste vältimiseks.
 
-## Milleks kasutatakse
+Erinevus Primary Key-st:
 
-* Tabelite vaheliste seoste loomiseks.
-* Andmete terviklikkuse tagamiseks.
+* tabelis võib olla mitu Unique Key-d;
+* mõnes andmebaasis võib Unique Key lubada `NULL` väärtust.
 
-## Erinevus teistest võtmetest
-
-Foreign Key ei pea olema unikaalne ning selle väärtused peavad eksisteerima seotud tabelis.
-
-## Näide
+Näide:
 
 ```sql
-CREATE TABLE Kursused (
-    KursusID INT PRIMARY KEY,
-    Nimetus VARCHAR(100)
-);
-
-CREATE TABLE Registreerimine (
-    RegistreerimineID INT PRIMARY KEY,
-    OpilaneID INT,
-    KursusID INT,
-    FOREIGN KEY (KursusID) REFERENCES Kursused(KursusID)
+CREATE TABLE Kasutaja (
+    kasutaja_id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE
 );
 ```
 
-**Lisa siia ekraanipilt loodud Foreign Key kohta.**
-
 ---
 
-# 3. Unique Key
+## Simple Key
 
-## Definitsioon
+**Simple Key** koosneb ainult ühest väljast.
 
-Unique Key tagab, et kõik väärtused veerus on unikaalsed.
+Seda kasutatakse kirje üheseks tuvastamiseks ühe välja abil.
 
-## Milleks kasutatakse
-
-* Duplikaatväärtuste vältimiseks.
-
-## Erinevus teistest võtmetest
-
-Erinevalt Primary Keyst võib sisaldada NULL väärtust (sõltuvalt andmebaasisüsteemist).
-
-## Näide
+Näide:
 
 ```sql
-CREATE TABLE Opetajad (
-    OpetajaID INT PRIMARY KEY,
-    Email VARCHAR(100) UNIQUE
+CREATE TABLE Raamat (
+    isbn VARCHAR(20) PRIMARY KEY,
+    pealkiri VARCHAR(100)
 );
 ```
 
-**Lisa siia ekraanipilt.**
-
 ---
 
-# 4. Simple Key
+## Composite Key
 
-## Definitsioon
+**Composite Key** koosneb kahest või enamast väljast, mis koos tagavad kirje unikaalsuse.
 
-Simple Key koosneb ainult ühest atribuudist.
+Seda kasutatakse siis, kui ühest väljast ei piisa kirje tuvastamiseks.
 
-## Milleks kasutatakse
-
-* Kirjete unikaalseks identifitseerimiseks ühe veeru abil.
-
-## Erinevus teistest võtmetest
-
-Koosneb ainult ühest väljast.
-
-## Näide
+Näide:
 
 ```sql
-CREATE TABLE Raamatud (
-    ISBN VARCHAR(20) PRIMARY KEY,
-    Pealkiri VARCHAR(100)
+CREATE TABLE Hinne (
+    opilane_id INT,
+    aine_id INT,
+    hinne INT,
+    PRIMARY KEY (opilane_id, aine_id)
 );
 ```
 
-**Lisa siia ekraanipilt.**
+---
+
+## Compound Key
+
+**Compound Key** on Composite Key erijuht. See koosneb mitmest väljast ja vähemalt üks neist võib olla Foreign Key.
+
+Seda kasutatakse tihti seostabelites, näiteks many-to-many seoste puhul.
+
+**SIIA LISA COMPOUND KEY PILT**
 
 ---
 
-# 5. Composite Key
+## Superkey
 
-## Definitsioon
+**Superkey** on üks või mitu välja, mille abil saab tabeli rea üheselt tuvastada.
 
-Composite Key koosneb kahest või enamast väljast, mis koos moodustavad unikaalse võtme.
+Superkey võib sisaldada ka liigseid välju.
 
-## Milleks kasutatakse
-
-* Kui üks väli eraldi ei taga unikaalsust.
-
-## Erinevus teistest võtmetest
-
-Koosneb mitmest atribuudist.
-
-## Näide
+Näide:
 
 ```sql
-CREATE TABLE Hinded (
-    OpilaneID INT,
-    KursusID INT,
-    Hinne INT,
-    PRIMARY KEY (OpilaneID, KursusID)
+CREATE TABLE Tootaja (
+    tootaja_id INT PRIMARY KEY,
+    isikukood VARCHAR(11) UNIQUE,
+    nimi VARCHAR(50)
 );
-```
 
-**Lisa siia ekraanipilt.**
+-- Superkey näited:
+-- tootaja_id
+-- isikukood
+-- tootaja_id + nimi
+-- isikukood + nimi
+```
 
 ---
 
-# 6. Compound Key
+## Candidate Key ehk kandidaatvõti
 
-## Definitsioon
+**Candidate Key** on minimaalne Superkey.
+See tähendab, et see tuvastab kirje üheselt ja ei sisalda liigseid välju.
 
-Compound Key on Composite Key erijuht, kus kõik võtme osad on seotud välisvõtmetega.
+Seda kasutatakse Primary Key valimiseks.
 
-## Milleks kasutatakse
-
-* Seostabelites.
-
-## Erinevus teistest võtmetest
-
-Koosneb mitmest väljast, mis sageli viitavad teiste tabelite võtmetele.
-
-## Näide
+Näide:
 
 ```sql
-CREATE TABLE OpilaneKursus (
-    OpilaneID INT,
-    KursusID INT,
-    PRIMARY KEY (OpilaneID, KursusID),
-    FOREIGN KEY (OpilaneID) REFERENCES Opilased(OpilaneID),
-    FOREIGN KEY (KursusID) REFERENCES Kursused(KursusID)
+CREATE TABLE Tootaja (
+    tootaja_id INT,
+    isikukood VARCHAR(11),
+    nimi VARCHAR(50),
+    PRIMARY KEY (tootaja_id),
+    UNIQUE (isikukood)
 );
+
+-- Kandidaatvõtmed:
+-- tootaja_id
+-- isikukood
 ```
 
-**Lisa siia ekraanipilt.**
-
 ---
 
-# 7. Superkey
+## Alternate Key ehk alternatiivvõti
 
-## Definitsioon
+**Alternate Key** on kandidaatvõti, mida ei valitud Primary Key-ks.
 
-Superkey on üks või mitu atribuuti, mis võimaldavad kirje unikaalselt tuvastada.
+Seda kasutatakse alternatiivseks unikaalseks identifitseerimiseks.
 
-## Milleks kasutatakse
-
-* Kirjete identifitseerimiseks.
-
-## Erinevus teistest võtmetest
-
-Võib sisaldada üleliigseid atribuute.
-
-## Näide
-
-Tabelis Opilased:
-
-| OpilaneID | Email |
-| --------- | ----- |
-
-Võimalikud supervõtmed:
-
-* OpilaneID
-* Email
-* OpilaneID + Email
-
-**Lisa näide SQL-i abil.**
-
----
-
-# 8. Candidate Key
-
-## Definitsioon
-
-Candidate Key on minimaalne Superkey, mis identifitseerib kirje unikaalselt.
-
-## Milleks kasutatakse
-
-* Primary Key valimiseks.
-
-## Erinevus teistest võtmetest
-
-Ei sisalda üleliigseid atribuute.
-
-## Näide
-
-Tabelis:
+Näide:
 
 ```sql
-CREATE TABLE Kasutajad (
-    KasutajaID INT,
-    Isikukood VARCHAR(11),
-    Email VARCHAR(100)
+CREATE TABLE Tootaja (
+    tootaja_id INT PRIMARY KEY,
+    isikukood VARCHAR(11) UNIQUE,
+    nimi VARCHAR(50)
 );
+
+-- tootaja_id = Primary Key
+-- isikukood = Alternate Key
 ```
-
-Candidate Key'd võivad olla:
-
-* KasutajaID
-* Isikukood
-* Email
-
----
-
-# 9. Alternate Key
-
-## Definitsioon
-
-Alternate Key on Candidate Key, mida ei valitud Primary Keyks.
-
-## Milleks kasutatakse
-
-* Täiendava unikaalsuse tagamiseks.
-
-## Erinevus teistest võtmetest
-
-On kandidaatvõti, kuid mitte Primary Key.
-
-## Näide
-
-```sql
-CREATE TABLE Kasutajad (
-    KasutajaID INT PRIMARY KEY,
-    Isikukood VARCHAR(11) UNIQUE,
-    Email VARCHAR(100) UNIQUE
-);
-```
-
-Siin:
-
-* Primary Key = KasutajaID
-* Alternate Key = Isikukood
-* Alternate Key = Email
-
-**Lisa siia ekraanipilt.**
-
----
-
