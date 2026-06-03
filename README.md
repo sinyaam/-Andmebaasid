@@ -1,6 +1,6 @@
 ## Andmebaasid konspektid | Ivan
 
-[Põhimõsted](README.md) | [Protseduurid](protseduur.md)
+[Põhimõsted](README.md) | [Protseduurid](protseduur.md) | [Triggeid](Trigger.md)
 
  Andmebaasidega seotud SQL kood ja konspetkid
 ## Sisukord
