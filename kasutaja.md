@@ -1,3 +1,7 @@
+## Andmebaasid konspektid | Ivan
+
+[Põhimõsted](README.md) | [Protseduurid;SQLSERVER](protseduur.md) | [Protseduurid;XAMPP](protseduurXAMPP.md) | [Triggerid](Trigger.md) | [hotelliruum](hotelliruum.md) | [kasutaja](kasutaja.md) | [keys](keys.md)
+
 ## õpetaja kasutaja.md konspekt
 ## Permissions of Fixed Database Roles (Database Engine)
 <img width="612" height="770" alt="pilt" src="https://github.com/user-attachments/assets/fbe4c2d7-4e67-4e53-9e6b-60dbacec0758" />
