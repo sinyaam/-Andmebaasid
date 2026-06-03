@@ -1,6 +1,6 @@
 ## Andmebaasid konspektid | Ivan
 
-[Põhimõsted](README.md) | [Protseduurid;SQLSERVER](protseduur.md) | [Protseduurid;XAMPP](protseduurXAMPP.md) | [Triggerid](Trigger.md) | [hotelliruum](hotelliruum.md) | [kasutaja;SQLSERVER](kasutaja.md)
+[Põhimõsted](README.md) | [Protseduurid;SQLSERVER](protseduur.md) | [Protseduurid;XAMPP](protseduurXAMPP.md) | [Triggerid](Trigger.md) | [hotelliruum](hotelliruum.md) | [kasutaja](kasutaja.md)
 
  Andmebaasidega seotud SQL kood ja konspetkid
 ## Sisukord
