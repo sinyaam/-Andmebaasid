@@ -1,3 +1,7 @@
+## Andmebaasid konspektid | Ivan
+
+[Põhimõsted](README.md) | [Protseduurid;SQLSERVER](protseduur.md) | [Protseduurid;XAMPP](protseduurXAMPP.md) | [Triggerid](Trigger.md) | [hotelliruum](hotelliruum.md) | [kasutaja](kasutaja.md) | [keys](keys.md)
+
 ## protseduurid
 - store procedure - salvestatud protseduurid - хранимые процеуедуры
 - sama nagu funktsioonid programmerimises - mingid tegevused mis käivitakse automaatselt protseduuri kasutamisel
