@@ -14,9 +14,9 @@ INSERT INTO guest
 VALUES ('Ivan','Sereda','2000-05-05'),
 ('Maksim','Avinov','2001-01-13'),
 ('Anton','Buketov','1984-03-06');
-
+```
 <img width="303" height="80" alt="{BD8A7D1F-9BFF-406B-9B10-879BB8A9930A}" src="https://github.com/user-attachments/assets/86c5d956-b3e1-4d19-8723-315d53402e86" />
-
+```
 
 --2.reservation
 CREATE TABLE reservation(
@@ -31,9 +31,9 @@ INSERT INTO reservation
 VALUES ('2003-06-07','2003-06-08','admin',1),
 ('2008-03-06','2008-04-06','admin',2),
 ('2026-08-09','2026-09-09','admin',3);
-
+```
 <img width="367" height="77" alt="{0C01DE6B-61DE-4D72-9696-CB8D25685AF9}" src="https://github.com/user-attachments/assets/29692953-b4d9-425c-a35f-512f613ef4fc" />
-
+```
 --3.room_type
 CREATE TABLE room_type(
 room_typeID int PRIMARY KEY identity(1,1),
@@ -44,9 +44,9 @@ INSERT INTO room_type
 VALUES ('vip',4),
 ('basic',1),
 ('double',2);
-
+```
 <img width="262" height="78" alt="{E98A7688-10EB-48F7-A571-A6280CDFED41}" src="https://github.com/user-attachments/assets/956a8b1e-7cb1-46f6-a7cb-76a1afeccd6d" />
-
+```
 --4.room
 CREATE TABLE room(
 roomID int PRIMARY KEY identity(1,1),
@@ -95,9 +95,9 @@ INSERT INTO occupied_room
 VALUES ('2026-08-09','2026-09-09',1,1),
 ('2008-03-06','2008-04-06',7,2),
 ('2003-06-08','2003-06-10',8,3);
-
+```
 <img width="405" height="78" alt="{BC142635-AA10-42D1-B3D9-AC94A33DCC99}" src="https://github.com/user-attachments/assets/339004f4-312b-47f1-9e72-b1a2bc16beb1" />
-
+```
 --7.hosted_at
 CREATE TABLE hosted_at(
 hosted_atID int PRIMARY KEY identity(1,1),
@@ -110,10 +110,10 @@ INSERT INTO hosted_at
 VALUES (1,1),
 (2,2),
 (3,3);
-
+```
 <img width="261" height="74" alt="{ADFCE17C-9425-4FD4-B2EA-443875EC446F}" src="https://github.com/user-attachments/assets/b720215a-1719-4a58-b3c9-29879c0f9c5e" />
 
-```
+
 ##Diagramm
 
 <img width="567" height="439" alt="{0679C835-0A50-4521-A5A2-D4D78CED5786}" src="https://github.com/user-attachments/assets/4122fd47-4e9d-4a93-8e97-d4401c0b88e1" />
