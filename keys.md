@@ -72,6 +72,7 @@ Ekraanipilt:
 <img width="309" height="208" alt="{0E0E690B-3E23-4312-8036-914B8AE3F390}" src="https://github.com/user-attachments/assets/4f0645ac-4e07-443e-9567-22b44382a8af" />
 
 ---
+<img width="416" height="162" alt="{0C2E6EFF-EC37-4649-8A24-7A5606B80E45}" src="https://github.com/user-attachments/assets/6c049833-b8f5-4884-ac3f-4f3cceb04483" />
 
 
 - ## Simple Key
