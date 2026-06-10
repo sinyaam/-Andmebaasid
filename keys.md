@@ -71,22 +71,6 @@ CREATE TABLE Kasutaja (
 
 ---
 
-## Simple Key
-
-**Simple Key** koosneb ainult ühest väljast.
-
-Seda kasutatakse kirje üheseks tuvastamiseks ühe välja abil.
-
-Näide:
-
-```sql
-CREATE TABLE Raamat (
-    isbn VARCHAR(20) PRIMARY KEY,
-    pealkiri VARCHAR(100)
-);
-```
-
----
 
 ## Composite Key
 
