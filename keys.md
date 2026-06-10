@@ -25,6 +25,7 @@ CREATE TABLE Opilane (
     perenimi VARCHAR(50)
 );
 ```
+<img width="1178" height="611" alt="{BC71D378-8F7A-4461-90C0-A5D1B060F705}" src="https://github.com/user-attachments/assets/2cc0a418-11f8-42f2-98d2-6f3d2a9baf97" />
 
 ---
 
