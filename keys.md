@@ -4,70 +4,68 @@
 
 # Andmebaasi võtmed
 
-## Primary Key ehk primaarvõti
+- ## Primary Key
 
-**Primary Key** on väli või väljade kombinatsioon, mis tuvastab iga tabeli rea üheselt.
+Definitsioon: Primary Key on tabeli peamine võti, mis identifitseerib iga rea unikaalselt.
 
-Seda kasutatakse andmete unikaalseks tuvastamiseks.
+Milleks kasutatakse: Seda kasutatakse selleks, et tabelis ei oleks kahte одинаковых rida sama ID-ga.
 
-Primaarvõtme omadused:
+Erinevus teistest võtmetest: Primary Key peab olema alati unikaalne ja ei tohi sisaldada NULL väärtust.
 
-* väärtus peab olema unikaalne;
-* väärtus ei tohi olla `NULL`;
-* ühes tabelis saab olla ainult üks Primary Key.
-
-Näide:
-
+Kood:
 ```sql
-CREATE TABLE Opilane (
+CREATE TABLE Opilased (
     opilane_id INT PRIMARY KEY,
-    eesnimi VARCHAR(50),
-    perenimi VARCHAR(50)
+    nimi VARCHAR(50)
 );
 ```
-<img width="1178" height="611" alt="{BC71D378-8F7A-4461-90C0-A5D1B060F705}" src="https://github.com/user-attachments/assets/2cc0a418-11f8-42f2-98d2-6f3d2a9baf97" />
+Ekraanipilt:
 
----
+<img width="272" height="198" alt="{0683997C-B5C8-4425-9DC8-8A2CA878770A}" src="https://github.com/user-attachments/assets/fea440bd-72a3-4d00-bb75-b72eeeb61d88" />
 
-## Foreign Key ehk võõrvõti
+- ## Foreign Key
 
-**Foreign Key** on väli, mis viitab teise tabeli Primary Key-le.
+Definitsioon: Foreign Key on väli, mis ühendab kaks tabelit omavahel.
 
-Seda kasutatakse tabelite omavaheliseks sidumiseks ja andmete tervikluse tagamiseks.
+Milleks kasutatakse: Sellega luuakse seos tabelite vahel.
 
-Võõrvõti ei tuvasta kirjet iseseisvalt, vaid seob ühe tabeli teise tabeliga.
+Erinevus teistest võtmetest: Foreign Key viitab teise tabeli Primary Key väärtusele.
 
-```
-CREATE TABLE õppeklass (
-õppeklassID int PRIMARY KEY IDENTITY(1,1),
-number int,
-opilane_id int
-FOREIGN  KEY (opilane_id) REFERENCES Opilane(opilane_id));
-```
-<img width="303" height="332" alt="{095469EB-E608-4CE8-B789-48DC2702FEA6}" src="https://github.com/user-attachments/assets/01704125-8cca-432f-94ff-e710664dbc5e" />
-
----
-
-## Unique Key
-
-**Unique Key** tagab, et veerus olevad väärtused oleksid unikaalsed.
-
-Seda kasutatakse korduvate väärtuste vältimiseks.
-
-Erinevus Primary Key-st:
-
-* tabelis võib olla mitu Unique Key-d;
-* mõnes andmebaasis võib Unique Key lubada `NULL` väärtust.
-
-Näide:
-
+Kood:
 ```sql
-CREATE TABLE Kasutaja (
+CREATE TABLE Opilased (
+    opilane_id INT PRIMARY KEY,
+    nimi VARCHAR(50)
+);
+
+CREATE TABLE Registreerimine (
+    reg_id INT PRIMARY KEY,
+    opilane_id INT,
+    FOREIGN KEY (opilane_id) REFERENCES Opilased(opilane_id)
+);
+```
+Ekraanipilt:
+
+<img width="593" height="141" alt="{D4573032-6956-4060-B962-67381776B71A}" src="https://github.com/user-attachments/assets/28c569a2-de48-4b4f-9328-c63b09d1d084" />
+
+- ## Unique Key
+
+Definitsioon: Unique Key tagab, et kõik väärtused veerus on erinevad.
+
+Milleks kasutatakse: Et vältida korduvaid väärtusi.
+
+Erinevus teistest võtmetest: Võib sisaldada ühte NULL väärtust, Primary Key ei või.
+
+Kood:
+```sql
+CREATE TABLE Kasutajad (
     kasutaja_id INT PRIMARY KEY,
     email VARCHAR(100) UNIQUE
 );
 ```
-<img width="1256" height="342" alt="{4D76946C-1A4C-4C82-B5E6-CABF45CAB1B2}" src="https://github.com/user-attachments/assets/d472c9d4-ca64-4328-82e8-d3bc52a0e154" />
+Ekraanipilt:
+
+<img width="309" height="208" alt="{0E0E690B-3E23-4312-8036-914B8AE3F390}" src="https://github.com/user-attachments/assets/4f0645ac-4e07-443e-9567-22b44382a8af" />
 
 ---
 
