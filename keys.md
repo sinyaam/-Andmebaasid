@@ -50,6 +50,8 @@ Ekraanipilt:
 
 <img width="593" height="141" alt="{D4573032-6956-4060-B962-67381776B71A}" src="https://github.com/user-attachments/assets/28c569a2-de48-4b4f-9328-c63b09d1d084" />
 
+<img width="390" height="167" alt="{F0EB6EA5-865D-45A7-B48B-159A2D9C965D}" src="https://github.com/user-attachments/assets/5a91afcb-5468-432c-a9af-7c5f1dd05b44" />
+
 - ## Unique Key
 
 Definitsioon: Unique Key tagab, et kõik väärtused veerus on erinevad.
