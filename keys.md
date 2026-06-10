@@ -67,6 +67,7 @@ CREATE TABLE Kasutaja (
     email VARCHAR(100) UNIQUE
 );
 ```
+<img width="1256" height="342" alt="{4D76946C-1A4C-4C82-B5E6-CABF45CAB1B2}" src="https://github.com/user-attachments/assets/d472c9d4-ca64-4328-82e8-d3bc52a0e154" />
 
 ---
 
