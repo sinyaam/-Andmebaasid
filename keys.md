@@ -72,16 +72,37 @@ CREATE TABLE Kasutaja (
 ---
 
 
-## Composite Key
+- ## Simple Key
 
-**Composite Key** koosneb kahest või enamast väljast, mis koos tagavad kirje unikaalsuse.
+Definitsioon: Simple Key koosneb ainult ühest veerust.
 
-Seda kasutatakse siis, kui ühest väljast ei piisa kirje tuvastamiseks.
+Milleks kasutatakse: Ühe väljaga rea leidmiseks.
 
-Näide:
+Erinevus teistest võtmetest: Ei kasuta mitut veergu.
 
+Kood:
 ```sql
-CREATE TABLE Hinne (
+CREATE TABLE Opilased (
+    opilane_id INT PRIMARY KEY,
+    nimi VARCHAR(50) --simple key
+);
+```
+
+Ekraanipilt:
+
+<img width="338" height="164" alt="{6B0A10B9-C4DF-4EA7-827A-056B3444DAD0}" src="https://github.com/user-attachments/assets/a863c761-6d6c-49af-b6b5-29fa5b5b37da" />
+
+- ## Composite Key
+
+Definitsioon: Composite Key koosneb kahest või enamast veerust.
+
+Milleks kasutatakse: Kui üks veerg ei ole piisavalt unikaalne.
+
+Erinevus teistest võtmetest: Unikaalsus tekib mitme välja kombinatsioonist.
+
+Kood:
+```sql
+CREATE TABLE Hinded (
     opilane_id INT,
     aine_id INT,
     hinne INT,
@@ -89,82 +110,90 @@ CREATE TABLE Hinne (
 );
 ```
 
----
+Ekraanipilt:
 
-## Compound Key
+<img width="358" height="242" alt="{FC157605-CC85-49B7-95B6-779BB12800A5}" src="https://github.com/user-attachments/assets/0e863ec3-1404-4825-bf73-be2cb67477be" />
 
-**Compound Key** on Composite Key erijuht. See koosneb mitmest väljast ja vähemalt üks neist võib olla Foreign Key.
+- ## Compound Key
 
-Seda kasutatakse tihti seostabelites, näiteks many-to-many seoste puhul.
+Definitsioon: Compound Key on Composite Key liik, kus võtmes võivad olla ka Foreign Key väljad.
 
-**SIIA LISA COMPOUND KEY PILT**
+Milleks kasutatakse: Mitme tabeli andmete ühendamiseks.
 
----
+Erinevus teistest võtmetest: Sisaldab tavaliselt vähemalt ühte Foreign Key välja.
 
-## Superkey
-
-**Superkey** on üks või mitu välja, mille abil saab tabeli rea üheselt tuvastada.
-
-Superkey võib sisaldada ka liigseid välju.
-
-Näide:
-
+Kood:
 ```sql
-CREATE TABLE Tootaja (
-    tootaja_id INT PRIMARY KEY,
-    isikukood VARCHAR(11) UNIQUE,
-    nimi VARCHAR(50)
+CREATE TABLE Tellimused (
+    klient_id INT,
+    toode_id INT,
+    kogus INT,
+    PRIMARY KEY (klient_id, toode_id)
 );
-
--- Superkey näited:
--- tootaja_id
--- isikukood
--- tootaja_id + nimi
--- isikukood + nimi
 ```
 
----
+Ekraanipilt:
 
-## Candidate Key ehk kandidaatvõti
+<img width="350" height="225" alt="{5AF6F6B1-BA85-45DC-9FF1-556E1B33D1BD}" src="https://github.com/user-attachments/assets/d19790c8-f27f-4ba0-aa59-713ffa079828" />
 
-**Candidate Key** on minimaalne Superkey.
-See tähendab, et see tuvastab kirje üheselt ja ei sisalda liigseid välju.
 
-Seda kasutatakse Primary Key valimiseks.
+- ## Superkey
 
-Näide:
+Definitsioon: Superkey on üks või mitu välja, mis identifitseerivad rea unikaalselt.
 
+Milleks kasutatakse: Ridade eristamiseks tabelis.
+
+Erinevus teistest võtmetest: Võib sisaldada lisavälju rohkem kui vaja.
+
+Kood:
 ```sql
-CREATE TABLE Tootaja (
+CREATE TABLE TooTajad (
     tootaja_id INT,
     isikukood VARCHAR(11),
-    nimi VARCHAR(50),
-    PRIMARY KEY (tootaja_id),
-    UNIQUE (isikukood)
+    email VARCHAR(100),
+    UNIQUE (tootaja_id, email)
 );
-
--- Kandidaatvõtmed:
--- tootaja_id
--- isikukood
 ```
 
----
+Ekraanipilt:
 
-## Alternate Key ehk alternatiivvõti
+<img width="284" height="198" alt="{667A143A-02A6-46CC-822A-90F5605D8D49}" src="https://github.com/user-attachments/assets/f0aafd1b-facb-4b41-a380-83ca44455a8d" />
 
-**Alternate Key** on kandidaatvõti, mida ei valitud Primary Key-ks.
+- ## Candidate Key
 
-Seda kasutatakse alternatiivseks unikaalseks identifitseerimiseks.
+Definitsioon: Candidate Key on võimalik Primary Key kandidaat.
 
-Näide:
+Milleks kasutatakse: Unikaalse rea leidmiseks.
 
+Erinevus teistest võtmetest: Tabelis võib olla mitu Candidate Key-d, kuid ainult üks neist valitakse Primary Key-ks.
+
+Kood:
 ```sql
-CREATE TABLE Tootaja (
-    tootaja_id INT PRIMARY KEY,
-    isikukood VARCHAR(11) UNIQUE,
-    nimi VARCHAR(50)
+CREATE TABLE Opetajad (
+    opetaja_id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE,
+    telefon VARCHAR(20) UNIQUE
 );
-
--- tootaja_id = Primary Key
--- isikukood = Alternate Key
 ```
+
+Ekraanipilt:
+
+<img width="300" height="211" alt="{E803D6E8-B069-4591-89A4-CF7F1996C84B}" src="https://github.com/user-attachments/assets/b83d99d9-ba80-48b0-8df7-1e7b64241f06" />
+
+
+- ## Alternate Key
+
+Definitsioon: Alternate Key on Candidate Key, mida ei valitud Primary Key-ks.
+
+Milleks kasutatakse: Täiendava unikaalsuse tagamiseks.
+
+Erinevus teistest võtmetest: See ei ole peamine võti, kuid on samuti unikaalne.
+
+Kood:
+```sql
+CREATE TABLE Firmad (
+    firma_id INT PRIMARY KEY,
+    registrikood VARCHAR(20) UNIQUE
+);
+```
+<img width="341" height="184" alt="{20ECDE2F-B6D2-4B06-87F8-5437F92CBB9E}" src="https://github.com/user-attachments/assets/abc38adb-1198-4aa1-90f6-c393be30c623" />
