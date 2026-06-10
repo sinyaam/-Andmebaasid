@@ -23,6 +23,8 @@ Ekraanipilt:
 
 <img width="272" height="198" alt="{0683997C-B5C8-4425-9DC8-8A2CA878770A}" src="https://github.com/user-attachments/assets/fea440bd-72a3-4d00-bb75-b72eeeb61d88" />
 
+<img width="390" height="144" alt="{DC86BDA3-2937-452A-A8BB-F5A35851BF0C}" src="https://github.com/user-attachments/assets/3e6b9f36-5da0-4293-903d-39b30c5b6f48" />
+
 - ## Foreign Key
 
 Definitsioon: Foreign Key on väli, mis ühendab kaks tabelit omavahel.
