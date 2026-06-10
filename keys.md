@@ -117,6 +117,8 @@ Ekraanipilt:
 
 <img width="358" height="242" alt="{FC157605-CC85-49B7-95B6-779BB12800A5}" src="https://github.com/user-attachments/assets/0e863ec3-1404-4825-bf73-be2cb67477be" />
 
+<img width="383" height="145" alt="{B61903B7-A56A-4E11-9BE6-8C0F2E2B9296}" src="https://github.com/user-attachments/assets/58f3d013-44e9-49f4-aa72-7f7f241c500d" />
+
 - ## Compound Key
 
 Definitsioon: Compound Key on Composite Key liik, kus võtmes võivad olla ka Foreign Key väljad.
@@ -139,6 +141,7 @@ Ekraanipilt:
 
 <img width="350" height="225" alt="{5AF6F6B1-BA85-45DC-9FF1-556E1B33D1BD}" src="https://github.com/user-attachments/assets/d19790c8-f27f-4ba0-aa59-713ffa079828" />
 
+<img width="357" height="146" alt="{52D212B1-4A6E-490C-BDCF-E5BA0DCED30D}" src="https://github.com/user-attachments/assets/faa9f3e7-53ab-4ac7-bef1-067579e5481b" />
 
 - ## Superkey
 
@@ -162,6 +165,9 @@ Ekraanipilt:
 
 <img width="284" height="198" alt="{667A143A-02A6-46CC-822A-90F5605D8D49}" src="https://github.com/user-attachments/assets/f0aafd1b-facb-4b41-a380-83ca44455a8d" />
 
+<img width="326" height="144" alt="{880D09FA-365E-4F3F-99A3-303C1A5E9640}" src="https://github.com/user-attachments/assets/f17db9aa-38b1-4028-90c3-06eb8bd5e366" />
+
+
 - ## Candidate Key
 
 Definitsioon: Candidate Key on võimalik Primary Key kandidaat.
@@ -183,6 +189,7 @@ Ekraanipilt:
 
 <img width="300" height="211" alt="{E803D6E8-B069-4591-89A4-CF7F1996C84B}" src="https://github.com/user-attachments/assets/b83d99d9-ba80-48b0-8df7-1e7b64241f06" />
 
+<img width="391" height="181" alt="{B390EFE0-B67A-435F-B86C-5340C8EB51DA}" src="https://github.com/user-attachments/assets/0b2ef6dd-b300-4e55-b18d-1d616b24f05c" />
 
 - ## Alternate Key
 
@@ -200,3 +207,6 @@ CREATE TABLE Firmad (
 );
 ```
 <img width="341" height="184" alt="{20ECDE2F-B6D2-4B06-87F8-5437F92CBB9E}" src="https://github.com/user-attachments/assets/abc38adb-1198-4aa1-90f6-c393be30c623" />
+
+<img width="375" height="165" alt="{6D988357-7E2D-404D-9C68-7B6E440DAABC}" src="https://github.com/user-attachments/assets/4db8a65f-9b29-4021-93ec-64fbc857e1c3" />
+
