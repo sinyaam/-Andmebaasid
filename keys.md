@@ -37,7 +37,14 @@ Seda kasutatakse tabelite omavaheliseks sidumiseks ja andmete tervikluse tagamis
 
 Võõrvõti ei tuvasta kirjet iseseisvalt, vaid seob ühe tabeli teise tabeliga.
 
-**SIIA LISA FOREIGN KEY PILT**
+```
+CREATE TABLE õppeklass (
+õppeklassID int PRIMARY KEY IDENTITY(1,1),
+number int,
+opilane_id int
+FOREIGN  KEY (opilane_id) REFERENCES Opilane(opilane_id));
+```
+<img width="303" height="332" alt="{095469EB-E608-4CE8-B789-48DC2702FEA6}" src="https://github.com/user-attachments/assets/01704125-8cca-432f-94ff-e710664dbc5e" />
 
 ---
 
